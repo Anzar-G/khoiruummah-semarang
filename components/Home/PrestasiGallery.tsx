@@ -1,6 +1,11 @@
 import React from 'react';
 import { Trophy } from 'lucide-react';
 import { ParallaxScrollSecond } from '../ui/parallax-scroll';
+import { GetStartedButton } from '../ui/get-started-button';
+
+interface PrestasiGalleryProps {
+  onViewGallery?: () => void;
+}
 
 const prestasiImages: string[] = [
   'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=80',
@@ -20,7 +25,7 @@ const prestasiImages: string[] = [
   'https://images.unsplash.com/photo-1542810634-71277d95dcbb?auto=format&fit=crop&w=1200&q=80',
 ];
 
-const PrestasiGallery: React.FC = () => {
+const PrestasiGallery: React.FC<PrestasiGalleryProps> = ({ onViewGallery }) => {
   // Ambil maksimal 15 foto untuk homepage (5 per kolom)
   const homepageImages = prestasiImages.slice(0, 15);
 
@@ -56,15 +61,34 @@ const PrestasiGallery: React.FC = () => {
         <div className="md:hidden">
           <div className="grid grid-cols-2 gap-3 mt-2">
             {homepageImages.map((src, idx) => (
-              <div key={idx} className="overflow-hidden rounded-2xl border border-slate-200 bg-slate-50">
+              <div
+                key={idx}
+                className="overflow-hidden rounded-2xl border border-slate-200 bg-slate-50"
+              >
                 <img
                   src={src}
-                  alt={`Prestasi santri Khoiru Ummah ${idx + 1}`}
+                  alt={`Momen prestasi santri Khoiru Ummah Semarang ${idx + 1}`}
                   className="h-32 w-full object-cover object-center"
+                  loading="lazy"
                 />
               </div>
             ))}
           </div>
+        </div>
+
+        <div className="mt-6 flex flex-col items-center gap-2">
+          <p className="text-[11px] sm:text-xs text-slate-500 text-center">
+            Prestasi dan dokumentasi kegiatan lain yang lebih lengkap dapat ditampilkan pada halaman <span className="font-semibold">Galeri & Prestasi</span>.
+          </p>
+          {onViewGallery && (
+            <GetStartedButton
+              size="sm"
+              onClick={onViewGallery}
+              className="mt-1 text-xs sm:text-[13px]"
+            >
+              Lihat galeri lengkap
+            </GetStartedButton>
+          )}
         </div>
       </div>
     </section>

@@ -163,11 +163,11 @@ const Overview: React.FC = () => {
               </h2>
               <p className="text-slate-700 leading-relaxed text-[15px] md:text-base">
                 Khoiru Ummah adalah lembaga pendidikan yang berfokus pada pembinaan generasi Qur'ani sejak usia sekolah dasar hingga remaja putri.
-                Lembaga ini berada di bawah naungan <span className="font-semibold">Yayasan &lt;nama yayasan&gt;</span> dengan izin operasional resmi serta pengawasan
+                Lembaga ini berada di bawah naungan <span className="font-semibold">Yayasan Pendidikan Islam Khoiru Ummah Semarang</span> dengan izin operasional resmi serta pengawasan
                 yang jelas dari pihak terkait.
               </p>
               <p className="text-slate-700 leading-relaxed text-[15px] md:text-base">
-                Sejak awal berdiri pada tahun <span className="font-semibold">&lt;tahun berdiri&gt;</span>, Khoiru Ummah hadir untuk menjawab kebutuhan orang tua yang
+                Sejak awal berdiri pada tahun <span className="font-semibold">2012</span>, Khoiru Ummah hadir untuk menjawab kebutuhan orang tua yang
                 menginginkan lingkungan belajar yang islami, terarah, dan tetap memperhatikan prestasi akademik. Melalui kombinasi sekolah formal
                 dan program kepesantrenan, lembaga ini membina siswa dan santri agar dekat dengan Al-Qur'an, berakhlak mulia, dan siap berkontribusi di masyarakat.
               </p>
@@ -195,7 +195,7 @@ const Overview: React.FC = () => {
               <div className="rounded-2xl border border-primary-100 bg-primary-50/60 p-6">
                 <h4 className="font-bold text-slate-900 mb-3 text-lg">Ringkasan Legalitas</h4>
                 <ul className="space-y-2 text-sm text-slate-700">
-                  <li>• Bernaung di bawah Yayasan &lt;nama yayasan&gt;.</li>
+                  <li>• Bernaung di bawah Yayasan Pendidikan Islam Khoiru Ummah Semarang.</li>
                   <li>• Memiliki izin operasional resmi dari instansi terkait.</li>
                   <li>• Terdaftar sebagai lembaga pendidikan Islam berbasis tahfidz.</li>
                 </ul>

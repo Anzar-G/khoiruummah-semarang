@@ -1,5 +1,6 @@
 import React from 'react';
 import { Building2, Landmark, Trees, Library, LayoutGrid, Users } from 'lucide-react';
+import { GetStartedButton } from '../ui/get-started-button';
 
 const facilities = [
   {
@@ -64,7 +65,11 @@ const facilities = [
   },
 ];
 
-const FasilitasLingkungan: React.FC = () => {
+interface FasilitasLingkunganProps {
+  onViewFacilities?: () => void;
+}
+
+const FasilitasLingkungan: React.FC<FasilitasLingkunganProps> = ({ onViewFacilities }) => {
   return (
     <section className="py-16 bg-slate-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -103,6 +108,21 @@ const FasilitasLingkungan: React.FC = () => {
               </ul>
             </div>
           ))}
+        </div>
+
+        <div className="mt-6 flex flex-col items-center gap-2">
+          <p className="text-[11px] sm:text-xs text-slate-500 text-center">
+            Daftar fasilitas lengkap beserta dokumentasinya dapat ditampilkan lebih detail pada halaman <span className="font-semibold">Tentang Sekolah</span> atau <span className="font-semibold">Galeri</span>.
+          </p>
+          {onViewFacilities && (
+            <GetStartedButton
+              size="sm"
+              onClick={onViewFacilities}
+              className="mt-1 text-xs sm:text-[13px]"
+            >
+              Lihat fasilitas lengkap
+            </GetStartedButton>
+          )}
         </div>
       </div>
     </section>

@@ -1,7 +1,12 @@
 import React from 'react';
 import { BookOpen, BookMarked, HeartHandshake, Lightbulb, Languages, Briefcase } from 'lucide-react';
+import { GetStartedButton } from '../ui/get-started-button';
 
-const ProgramUnggulan: React.FC = () => {
+interface ProgramUnggulanProps {
+  onViewPrograms?: () => void;
+}
+
+const ProgramUnggulan: React.FC<ProgramUnggulanProps> = ({ onViewPrograms }) => {
   const programs = [
     {
       icon: <BookOpen className="w-7 h-7" />,
@@ -66,6 +71,21 @@ const ProgramUnggulan: React.FC = () => {
               <p className="text-xs md:text-[13px] text-slate-500 leading-relaxed mt-1 flex-1">{program.detail}</p>
             </div>
           ))}
+        </div>
+
+        <div className="mt-6 flex flex-col items-center gap-2">
+          <p className="text-[11px] sm:text-xs text-slate-500 text-center">
+            Ingin melihat detail lengkap setiap program tahfidz, akademik, dan pembinaan karakter di Khoiru Ummah? Semua rangkuman kurikulum dapat kamu temukan pada halaman <span className="font-semibold">Kurikulum & Program</span>.
+          </p>
+          {onViewPrograms && (
+            <GetStartedButton
+              size="sm"
+              onClick={onViewPrograms}
+              className="mt-1 text-xs sm:text-[13px]"
+            >
+              Lihat semua program
+            </GetStartedButton>
+          )}
         </div>
       </div>
     </section>

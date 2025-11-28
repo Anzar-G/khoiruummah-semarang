@@ -51,7 +51,7 @@ export const ParallaxScrollSecond: React.FC<ParallaxScrollSecondProps> = ({
               <img
                 src={el}
                 className="h-64 md:h-80 w-full object-cover object-center rounded-xl shadow-sm"
-                alt="Galeri prestasi Khoiru Ummah"
+                alt="Galeri prestasi santri Khoiru Ummah Semarang"
               />
             </motion.div>
           ))}
@@ -62,7 +62,7 @@ export const ParallaxScrollSecond: React.FC<ParallaxScrollSecondProps> = ({
               <img
                 src={el}
                 className="h-64 md:h-80 w-full object-cover object-center rounded-xl shadow-sm"
-                alt="Galeri prestasi Khoiru Ummah"
+                alt="Galeri prestasi santri Khoiru Ummah Semarang"
               />
             </motion.div>
           ))}

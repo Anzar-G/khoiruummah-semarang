@@ -15,6 +15,7 @@ import FAQSection from './components/Home/FAQSection';
 import FinalCTA from './components/Home/FinalCTA';
 import Activities3D from './components/Home/Activities3D';
 import Testimonials from './components/Home/Testimonials';
+import AllTestimonials from './components/Testimonials/AllTestimonials';
 import Overview from './components/About/Overview';
 import Curriculum from './components/Education/Curriculum';
 import Gallery from './components/Gallery/Gallery';
@@ -24,19 +25,29 @@ import Contact from './components/Contact/Contact';
 import PSB from './components/Admission/PSB';
 import Footer from './components/Layout/Footer';
 import { Sidebar, SidebarBody, SidebarLink } from './components/ui/sidebar';
-import { 
-  LayoutDashboard, 
-  GraduationCap, 
-  School, 
-  BookOpen, 
-  Image as ImageIcon, 
-  Trophy, 
-  Phone 
+import {
+  LayoutDashboard,
+  GraduationCap,
+  School,
+  BookOpen,
+  Image as ImageIcon,
+  Trophy,
+  Phone,
+  MessageCircle,
 } from 'lucide-react';
 import { cn } from './lib/utils';
 import { motion } from 'framer-motion';
 
-type PageState = 'home' | 'about' | 'curriculum' | 'gallery' | 'extracurricular' | 'news' | 'contact' | 'psb';
+type PageState =
+  | 'home'
+  | 'about'
+  | 'curriculum'
+  | 'gallery'
+  | 'extracurricular'
+  | 'news'
+  | 'testimonials'
+  | 'contact'
+  | 'psb';
 
 const App: React.FC = () => {
   const [open, setOpen] = useState(false);
@@ -49,6 +60,14 @@ const App: React.FC = () => {
       href: "#",
       icon: (
         <LayoutDashboard className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
+      ),
+    },
+    {
+      id: 'testimonials',
+      label: 'Testimoni',
+      href: '#',
+      icon: (
+        <MessageCircle className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
       ),
     },
     {
@@ -178,22 +197,34 @@ const App: React.FC = () => {
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.3 }}
                 >
+                  {/* 1. Hero utama */}
                   <Hero />
+
+                  {/* 2. Sekilas angka & pencapaian */}
                   <Stats />
+
+                  {/* 3–4. Visi Misi + Profil (sementara masih memakai ProfileHistory sebagai profil singkat) */}
                   <VisionMission />
                   <ProfileHistory />
+
+                  {/* 5. Kenapa Memilih + Keunggulan utama */}
                   <Features />
                   <KeyAdvantages />
-                  <ProgramUnggulan />
-                  <MetodePembelajaran />
-                  <JadwalHarian />
-                  <FasilitasLingkungan />
-                  <PrestasiGallery />
+
+                  {/* 6–7. Program unggulan & fasilitas ringkas */}
+                  <ProgramUnggulan onViewPrograms={() => handlePageChange('curriculum')} />
+                  <FasilitasLingkungan onViewFacilities={() => handlePageChange('gallery')} />
+
+                  {/* 8–9. Galeri/Prestasi & berita terbaru */}
+                  <PrestasiGallery onViewGallery={() => handlePageChange('gallery')} />
                   <NewsArticles onViewAllNews={() => handlePageChange('news')} />
+
+                  {/* 10. Testimoni singkat */}
+                  <Testimonials onViewAllTestimonials={() => handlePageChange('testimonials')} />
+
+                  {/* 11–12. FAQ ringkas & CTA PSB */}
                   <FAQSection />
                   <FinalCTA onOpenPSB={() => handlePageChange('psb')} />
-                  <Activities3D />
-                  <Testimonials />
                 </motion.div>
               )}
 
@@ -234,6 +265,16 @@ const App: React.FC = () => {
                   transition={{ duration: 0.3 }}
                 >
                   <NewsPage />
+                </motion.div>
+              )}
+
+              {activePage === 'testimonials' && (
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <AllTestimonials />
                 </motion.div>
               )}
 

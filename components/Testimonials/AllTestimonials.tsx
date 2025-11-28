@@ -1,11 +1,10 @@
 import React from 'react';
-import { GetStartedButton } from '../ui/get-started-button';
 import {
   StaggerTestimonials,
   type StaggerTestimonialItem,
 } from '../ui/stagger-testimonials';
 
-const testimonialsData: StaggerTestimonialItem[] = [
+const allTestimonialsData: StaggerTestimonialItem[] = [
   {
     tempId: 0,
     imgSrc:
@@ -69,45 +68,26 @@ const testimonialsData: StaggerTestimonialItem[] = [
     testimonial:
       'Keberadaan Pondok Khoiru Ummah Semarang membawa keberkahan bagi lingkungan sekitar. Santrinya sopan-sopan.',
     by: 'Dedi Supriyadi, Tokoh masyarakat',
-  }
+  },
 ];
 
-interface TestimonialsProps {
-  onViewAllTestimonials?: () => void;
-}
-
-const Testimonials: React.FC<TestimonialsProps> = ({ onViewAllTestimonials }) => {
+const AllTestimonials: React.FC = () => {
   return (
-    <section className="py-24 bg-white" id="testimoni">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-10 md:mb-14 max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold mb-3 text-slate-900">
-            Kata Mereka
-          </h2>
-          <p className="text-slate-600 text-sm md:text-[15px]">
-            Apa kata orang tua, alumni, dan tokoh masyarakat tentang Khoiru Ummah Semarang.
-          </p>
-        </div>
+    <div className="w-full min-h-screen bg-slate-50 pb-20">
+      <section className="bg-slate-900 text-white py-16 px-4 text-center">
+        <h1 className="text-3xl md:text-4xl font-serif font-bold mb-3">
+          Testimoni Khoiru Ummah Semarang
+        </h1>
+        <p className="text-slate-300 max-w-2xl mx-auto text-sm md:text-base">
+          Kumpulan cerita dari orang tua, alumni, donatur, dan tokoh masyarakat tentang pengalaman mereka bersama Khoiru Ummah Semarang.
+        </p>
+      </section>
 
-        <StaggerTestimonials items={testimonialsData} />
-
-        <div className="mt-6 flex flex-col items-center gap-2">
-          <p className="text-[11px] sm:text-xs text-slate-500 text-center">
-            Testimoni lengkap dari orang tua, alumni, dan tokoh masyarakat dapat ditampilkan pada halaman khusus <span className="font-semibold">Testimoni</span>.
-          </p>
-          {onViewAllTestimonials && (
-            <GetStartedButton
-              size="sm"
-              onClick={onViewAllTestimonials}
-              className="mt-1 text-xs sm:text-[13px]"
-            >
-              Lihat semua testimoni
-            </GetStartedButton>
-          )}
-        </div>
-      </div>
-    </section>
+      <section className="container mx-auto px-4 py-10 md:py-14">
+        <StaggerTestimonials items={allTestimonialsData} />
+      </section>
+    </div>
   );
 };
 
-export default Testimonials;
+export default AllTestimonials;

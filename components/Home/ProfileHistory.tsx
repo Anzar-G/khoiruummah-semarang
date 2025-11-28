@@ -35,14 +35,12 @@ const ProfileHistory: React.FC = () => {
             </div>
             
             <p className="text-slate-600 text-sm md:text-[15px] leading-relaxed">
-              Khoiru Ummah hadir sebagai lembaga pendidikan yang memadukan sekolah formal dengan pembinaan kepesantrenan. 
-              Sejak awal berdiri pada tahun <span className="font-semibold">&lt;tahun berdiri&gt;</span>, lembaga ini berfokus pada pembinaan 
-              generasi Qur'ani sejak usia sekolah dasar hingga remaja putri.
+              Khoiru Ummah Semarang adalah lembaga pendidikan Islam yang memadukan sekolah formal dengan pembinaan kepesantrenan. 
+              Sejak berdiri pada tahun <span className="font-semibold">2012</span>, fokus utamanya adalah melahirkan generasi penghafal Al-Qur'an yang kuat dalam akhlak, kokoh dalam aqidah, dan siap bersaing secara akademik.
             </p>
             <p className="text-slate-600 text-sm md:text-[15px] leading-relaxed">
-              Di bawah naungan <span className="font-semibold">Yayasan &lt;nama yayasan&gt;</span>, Khoiru Ummah terus berkembang dari tahun ke tahun 
-              dengan menambah fasilitas, memperkuat kurikulum, serta meningkatkan kualitas guru dan ustadzah pembina. Legalitas dan akreditasi 
-              lembaga dikelola secara bertahap seiring dengan amanah yang semakin besar dari para orang tua.
+              Di bawah naungan <span className="font-semibold">Yayasan Pendidikan Islam Khoiru Ummah Semarang</span>, lembaga ini menaungi jenjang SD Tahfidz hingga Pondok Putri SMP/SMA. 
+              Kurikulum dirancang untuk menyeimbangkan tahfidz, pelajaran umum, serta pembinaan karakter sehari-hari, dengan pendampingan guru dan ustadzah yang dekat dengan santri.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 pt-2">
@@ -82,7 +80,7 @@ const ProfileHistory: React.FC = () => {
 
             <div className="pt-2">
               <p className="text-xs md:text-[13px] text-slate-500 leading-relaxed">
-                Informasi lebih rinci tentang sejarah, akreditasi, dan struktur organisasi dapat disajikan pada halaman khusus "Tentang Sekolah".
+                Informasi lebih rinci tentang sejarah, legalitas, dan struktur organisasi akan disajikan pada halaman khusus "Tentang Sekolah".
               </p>
             </div>
           </div>
