@@ -115,7 +115,7 @@ export const MobileSidebar = ({
         {...props}
       >
         <div className="flex justify-between z-20 w-full items-center">
-          <div className="font-bold text-slate-800 text-lg">Al-Bayan</div>
+          <div className="font-bold text-slate-800 text-lg">Khoiru Ummah Semarang</div>
           <Menu
             className="text-slate-800 dark:text-neutral-200 cursor-pointer"
             onClick={() => setOpen(!open)}

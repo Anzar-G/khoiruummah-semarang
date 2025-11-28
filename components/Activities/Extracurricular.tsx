@@ -14,7 +14,7 @@ const Extracurricular: React.FC = () => {
         <div className="container mx-auto px-4 text-center relative z-10">
           <h1 className="text-4xl md:text-5xl font-serif font-bold mb-6">Pengembangan Bakat & Karakter</h1>
           <p className="text-lg text-primary-100 max-w-3xl mx-auto leading-relaxed">
-            Ekstrakurikuler di Al-Bayan bukan sekadar pengisi waktu luang, tapi sarana membentuk jiwa kepemimpinan, kemandirian, dan keterampilan hidup (life skill) bagi santri.
+            Ekstrakurikuler di Khoiru Ummah Semarang bukan sekadar pengisi waktu luang, tapi sarana membentuk jiwa kepemimpinan, kemandirian, dan keterampilan hidup (life skill) bagi santri.
           </p>
         </div>
       </section>

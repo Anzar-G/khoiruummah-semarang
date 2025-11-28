@@ -37,7 +37,7 @@ const Navbar: React.FC = () => {
               <GraduationCap size={28} />
             </div>
             <span className={`font-serif font-bold text-2xl ${scrolled ? 'text-primary-800' : 'text-white drop-shadow-md'}`}>
-              Al-Bayan
+              Khoiru Ummah Semarang
             </span>
           </div>
 

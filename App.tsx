@@ -291,7 +291,7 @@ export const Logo = () => {
         animate={{ opacity: 1 }}
         className="font-serif font-bold text-lg text-primary-800 whitespace-pre"
       >
-        Al-Bayan
+        Khoiru Ummah Semarang
       </motion.span>
     </a>
   );

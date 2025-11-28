@@ -7,7 +7,7 @@ import { cn } from '../../lib/utils';
 const galleryItems = [
   // Fasilitas
   { id: 1, category: 'fasilitas', src: 'https://images.unsplash.com/photo-1588072432836-e10032774350?q=80&w=800&auto=format&fit=crop', title: 'Gedung Sekolah SD', desc: 'Ruang kelas nyaman ber-AC' },
-  { id: 2, category: 'fasilitas', src: 'https://images.unsplash.com/photo-1519452635265-7b1fbfd1e4e0?q=80&w=800&auto=format&fit=crop', title: 'Masjid Al-Bayan', desc: 'Pusat kegiatan ibadah' },
+  { id: 2, category: 'fasilitas', src: 'https://images.unsplash.com/photo-1519452635265-7b1fbfd1e4e0?q=80&w=800&auto=format&fit=crop', title: 'Masjid Khoiru Ummah Semarang', desc: 'Pusat kegiatan ibadah' },
   { id: 3, category: 'fasilitas', src: 'https://images.unsplash.com/photo-1555854877-bab0e564b8d5?q=80&w=800&auto=format&fit=crop', title: 'Asrama Putri', desc: 'Kamar tidur bersih dan rapi' },
   { id: 4, category: 'fasilitas', src: 'https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=800&auto=format&fit=crop', title: 'Halaman Sekolah', desc: 'Area bermain dan olahraga' },
   
@@ -44,7 +44,7 @@ const Gallery: React.FC = () => {
     <div className="w-full min-h-screen bg-slate-50 pb-20">
       {/* Hero */}
       <section className="bg-slate-900 text-white py-20 px-4 text-center">
-        <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4">Galeri Al-Bayan</h1>
+        <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4">Galeri Khoiru Ummah Semarang</h1>
         <p className="text-slate-300 max-w-2xl mx-auto">
           Dokumentasi fasilitas, kegiatan, dan prestasi santri SD Tahfidz & Pondok Putri SMP/SMA.
         </p>

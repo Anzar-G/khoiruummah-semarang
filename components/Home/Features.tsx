@@ -35,7 +35,7 @@ const Features: React.FC = () => {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-10 md:mb-16">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">Kenapa Memilih Al-Bayan?</h2>
+          <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">Kenapa Memilih Khoiru Ummah Semarang?</h2>
           <p className="text-primary-200 max-w-2xl mx-auto">Kami berikhtiar memberikan lingkungan terbaik bagi tumbuh kembang putri Anda.</p>
         </div>
 

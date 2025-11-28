@@ -6,7 +6,7 @@ const testimonialsData: Testimonial[] = [
     image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop",
     name: "Siti Nurhaliza",
     username: "@walisantri_sd",
-    text: "Alhamdulillah, sejak sekolah di SD Al-Bayan, hafalan anak saya meningkat pesat. Gurunya sangat sabar dan komunikatif.",
+    text: "Alhamdulillah, sejak sekolah di SD Khoiru Ummah Semarang, hafalan anak saya meningkat pesat. Gurunya sangat sabar dan komunikatif.",
     social: "#"
   },
   {
@@ -41,7 +41,7 @@ const testimonialsData: Testimonial[] = [
     image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&auto=format&fit=crop",
     name: "Hendra Wijaya",
     username: "@donatur_sekolah",
-    text: "Saya melihat kesungguhan pengurus dalam mengelola amanah. Semoga Al-Bayan terus maju mencetak generasi rabbani.",
+    text: "Saya melihat kesungguhan pengurus dalam mengelola amanah. Semoga Khoiru Ummah Semarang terus maju mencetak generasi rabbani.",
     social: "#"
   },
   {
@@ -55,7 +55,7 @@ const testimonialsData: Testimonial[] = [
     image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop",
     name: "Dedi Supriyadi",
     username: "@tokoh_masyarakat",
-    text: "Keberadaan Pondok Al-Bayan membawa keberkahan bagi lingkungan sekitar. Santrinya sopan-sopan.",
+    text: "Keberadaan Pondok Khoiru Ummah Semarang membawa keberkahan bagi lingkungan sekitar. Santrinya sopan-sopan.",
     social: "#"
   }
 ];
@@ -67,7 +67,7 @@ const Testimonials: React.FC = () => {
         <TestimonialsUI 
           testimonials={testimonialsData} 
           title="Kata Mereka"
-          description="Apa kata orang tua, alumni, dan tokoh masyarakat tentang Al-Bayan Tahfidz & Boarding School."
+          description="Apa kata orang tua, alumni, dan tokoh masyarakat tentang Khoiru Ummah Semarang."
         />
       </div>
     </section>

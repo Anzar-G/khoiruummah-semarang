@@ -31,7 +31,7 @@ const Contact: React.FC = () => {
                     <h4 className="font-semibold text-slate-900">Alamat Sekolah</h4>
                     <p className="text-slate-600 text-sm mt-1 leading-relaxed">
                       Jl. Pendidikan Islam No. 99, Kelurahan Sejuk, <br />
-                      Kecamatan Harapan, Kota Al-Bayan, 12345
+                      Kecamatan Harapan, Kota Khoiru Ummah Semarang, 12345
                     </p>
                   </div>
                 </div>

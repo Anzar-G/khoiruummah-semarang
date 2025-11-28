@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
               <div className="p-1.5 bg-primary-600 rounded-md">
                 <GraduationCap size={24} />
               </div>
-              <span className="font-serif font-bold text-xl">Al-Bayan</span>
+              <span className="font-serif font-bold text-xl">Khoiru Ummah Semarang</span>
             </div>
             <p className="text-sm leading-relaxed text-slate-400">
               Mendidik generasi Qur'ani yang cerdas, berakhlak mulia, dan siap berkontribusi untuk umat dan bangsa.
@@ -69,7 +69,7 @@ const Footer: React.FC = () => {
         </div>
         
         <div className="border-t border-slate-800 mt-12 pt-8 text-center text-sm text-slate-500">
-          <p>&copy; {new Date().getFullYear()} Al-Bayan Tahfidz & Boarding School. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Khoiru Ummah Semarang. All rights reserved.</p>
         </div>
       </div>
     </footer>
