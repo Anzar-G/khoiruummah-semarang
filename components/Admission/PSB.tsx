@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Check, ArrowRight, BookOpen, Home, Users, Calendar, MessageSquare, ChevronDown } from 'lucide-react';
+import PSBTimeline from './PSBTimeline';
 
 const PSB: React.FC = () => {
   const [selectedLevel, setSelectedLevel] = useState<'sd' | 'smp' | 'sma'>('smp');
@@ -332,7 +333,7 @@ const PSB: React.FC = () => {
         </div>
       </section>
       
-      {/* Section Alur Pendaftaran */}
+      {/* Section Alur Pendaftaran & Timeline */}
       <section id="alur-pendaftaran" className="py-20 bg-slate-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
@@ -343,35 +344,7 @@ const PSB: React.FC = () => {
           </div>
           
           <div className="max-w-4xl mx-auto">
-            <div className="grid md:grid-cols-4 gap-8">
-              {/* Langkah 1 */}
-              <div className="text-center">
-                <div className="w-16 h-16 mx-auto bg-primary-100 text-primary-600 rounded-full flex items-center justify-center text-2xl font-bold mb-4">1</div>
-                <h3 className="font-bold text-lg mb-2">Pendaftaran Online</h3>
-                <p className="text-slate-600 text-sm">Isi formulir pendaftaran sesuai jenjang yang dipilih</p>
-              </div>
-              
-              {/* Langkah 2 */}
-              <div className="text-center">
-                <div className="w-16 h-16 mx-auto bg-primary-100 text-primary-600 rounded-full flex items-center justify-center text-2xl font-bold mb-4">2</div>
-                <h3 className="font-bold text-lg mb-2">Verifikasi Dokumen</h3>
-                <p className="text-slate-600 text-sm">Upload dokumen persyaratan yang dibutuhkan</p>
-              </div>
-              
-              {/* Langkah 3 */}
-              <div className="text-center">
-                <div className="w-16 h-16 mx-auto bg-primary-100 text-primary-600 rounded-full flex items-center justify-center text-2xl font-bold mb-4">3</div>
-                <h3 className="font-bold text-lg mb-2">Tes & Wawancara</h3>
-                <p className="text-slate-600 text-sm">Mengikuti tes akademik dan wawancara</p>
-              </div>
-              
-              {/* Langkah 4 */}
-              <div className="text-center">
-                <div className="w-16 h-16 mx-auto bg-primary-100 text-primary-600 rounded-full flex items-center justify-center text-2xl font-bold mb-4">4</div>
-                <h3 className="font-bold text-lg mb-2">Pengumuman</h3>
-                <p className="text-slate-600 text-sm">Pengumuman kelulusan dan daftar ulang</p>
-              </div>
-            </div>
+            <PSBTimeline />
             
             <div className="mt-12 text-center">
               <a 

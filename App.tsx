@@ -23,7 +23,9 @@ import NewsPage from './components/News/NewsPage';
 import Extracurricular from './components/Activities/Extracurricular';
 import Contact from './components/Contact/Contact';
 import PSB from './components/Admission/PSB';
+import Biaya from './components/Admission/Biaya';
 import Footer from './components/Layout/Footer';
+import FloatingCTA from './components/Layout/FloatingCTA';
 import { Sidebar, SidebarBody, SidebarLink } from './components/ui/sidebar';
 import {
   LayoutDashboard,
@@ -47,7 +49,8 @@ type PageState =
   | 'news'
   | 'testimonials'
   | 'contact'
-  | 'psb';
+  | 'psb'
+  | 'biaya';
 
 const App: React.FC = () => {
   const [open, setOpen] = useState(false);
@@ -116,6 +119,14 @@ const App: React.FC = () => {
       href: "#",
       icon: (
         <Phone className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
+      ),
+    },
+    {
+      id: 'biaya',
+      label: 'Biaya Pendidikan',
+      href: '#',
+      icon: (
+        <GraduationCap className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
       ),
     },
   ];
@@ -307,12 +318,23 @@ const App: React.FC = () => {
                   <PSB />
                 </motion.div>
               )}
+
+              {activePage === 'biaya' && (
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Biaya />
+                </motion.div>
+              )}
             </main>
 
             <Footer />
             
           </div>
         </div>
+        <FloatingCTA onRegisterClick={() => handlePageChange('psb')} />
       </div>
     </div>
   );
