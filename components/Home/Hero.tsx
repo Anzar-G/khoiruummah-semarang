@@ -4,15 +4,22 @@ import { ArrowRight, ChevronRight } from 'lucide-react';
 const Hero: React.FC = () => {
   return (
     <div className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div 
-        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat transform scale-105 animate-slowZoom"
-        style={{
-          backgroundImage: 'url("https://images.unsplash.com/photo-1544928147-79a2dbc4663f?q=80&w=2574&auto=format&fit=crop")',
-        }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-r from-primary-900/90 to-primary-800/60 mix-blend-multiply"></div>
-        <div className="absolute inset-0 bg-black/20"></div>
+      {/* Background Video with Overlay */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <video
+          className="w-full h-full object-cover transform scale-105 animate-slowZoom"
+          autoPlay
+          loop
+          muted
+          playsInline
+        >
+          <source
+            src="https://videos.pexels.com/video-files/6202289/6202289-uhd_2560_1440_24fps.mp4"
+            type="video/mp4"
+          />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-r from-primary-900/90 to-primary-800/60 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-black/20" />
       </div>
 
       {/* Content */}
@@ -55,8 +62,14 @@ const Hero: React.FC = () => {
       
       {/* Decorative Bottom Wave */}
       <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0]">
-        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block h-[60px] sm:h-[100px] w-full fill-slate-50">
-            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+          className="relative block h-[60px] sm:h-[100px] w-full fill-slate-50"
+        >
+          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" />
         </svg>
       </div>
     </div>

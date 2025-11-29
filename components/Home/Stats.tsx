@@ -1,5 +1,66 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Users, BookOpen, Award, Star } from 'lucide-react';
+
+const ANIMATION_DURATION = 4000; // 4 detik
+
+const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
+
+interface StatItem {
+  label: string;
+  value: string;
+  desc: string;
+}
+
+const parseNumber = (value: string) => {
+  const numeric = parseInt(value.replace(/[^0-9]/g, ''), 10);
+  return isNaN(numeric) ? 0 : numeric;
+};
+
+const AnimatedStatValue: React.FC<{ value: string; isVisible: boolean }> = ({ value, isVisible }) => {
+  const [displayValue, setDisplayValue] = useState(0);
+  const startTimeRef = useRef<number | null>(null);
+  const rafRef = useRef<number | null>(null);
+  const target = parseNumber(value);
+
+  useEffect(() => {
+    if (!isVisible || target === 0) {
+      return;
+    }
+
+    const step = (timestamp: number) => {
+      if (startTimeRef.current === null) {
+        startTimeRef.current = timestamp;
+      }
+      const elapsed = timestamp - startTimeRef.current;
+      const progress = Math.min(elapsed / ANIMATION_DURATION, 1);
+      const eased = easeOutCubic(progress);
+      const current = Math.round(target * eased);
+      setDisplayValue(current);
+
+      if (progress < 1) {
+        rafRef.current = requestAnimationFrame(step);
+      }
+    };
+
+    rafRef.current = requestAnimationFrame(step);
+
+    return () => {
+      if (rafRef.current) {
+        cancelAnimationFrame(rafRef.current);
+      }
+      startTimeRef.current = null;
+    };
+  }, [isVisible, target]);
+
+  const suffixMatch = value.match(/[^0-9]+$/);
+  const suffix = suffixMatch ? suffixMatch[0] : '';
+
+  return (
+    <span>
+      {target === 0 ? value : displayValue.toLocaleString('id-ID') + suffix}
+    </span>
+  );
+};
 
 const Stats: React.FC = () => {
   const stats = [
@@ -10,7 +71,47 @@ const Stats: React.FC = () => {
     { label: 'Alumni', value: '150+', desc: 'Melanjutkan studi & berkhidmat di masyarakat' },
     { label: 'Target Hafalan SD', value: '5-10', desc: 'Juz di akhir jenjang SD Tahfidz' },
     { label: 'Target Hafalan SMP/SMA', value: '15-30', desc: 'Juz di akhir jenjang Pondok Putri' },
-  ];
+  ] as StatItem[];
+
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const [visibleIndexes, setVisibleIndexes] = useState<Record<number, boolean>>({});
+
+  useEffect(() => {
+    if (!containerRef.current) return;
+
+    const items = containerRef.current.querySelectorAll<HTMLDivElement>('[data-stat-index]');
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        setVisibleIndexes((prev) => {
+          const next = { ...prev };
+          entries.forEach((entry) => {
+            const indexAttr = entry.target.getAttribute('data-stat-index');
+            if (!indexAttr) return;
+            const index = parseInt(indexAttr, 10);
+            if (entry.isIntersecting) {
+              // sekali terlihat, tandai true agar animasi tidak di-reset saat scroll
+              if (!next[index]) {
+                next[index] = true;
+              }
+            }
+          });
+          return next;
+        });
+      },
+      {
+        root: null,
+        // threshold kecil agar di mobile cepat terdeteksi saat kartu mulai masuk layar
+        threshold: 0.25,
+      },
+    );
+
+    items.forEach((el) => observer.observe(el));
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
 
   return (
     <section className="py-16 md:py-20 bg-white" id="statistik">
@@ -31,14 +132,20 @@ const Stats: React.FC = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+        <div
+          ref={containerRef}
+          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6"
+        >
           {stats.map((stat, index) => (
             <div
               key={index}
+              data-stat-index={index}
               className="group bg-slate-50 border border-slate-200 rounded-2xl px-4 py-5 md:px-5 md:py-6 hover:border-primary-400 hover:bg-primary-50/70 transition-all duration-300"
             >
               <p className="text-xs uppercase tracking-[0.18em] text-slate-500 mb-1">{stat.label}</p>
-              <p className="text-2xl md:text-3xl font-serif font-bold text-primary-700 mb-1">{stat.value}</p>
+              <p className="text-2xl md:text-3xl font-serif font-bold text-primary-700 mb-1">
+                <AnimatedStatValue value={stat.value} isVisible={!!visibleIndexes[index]} />
+              </p>
               {stat.label === 'Santri Aktif' && (
                 <div className="flex items-center gap-1 text-[11px] text-primary-700 font-medium mb-1">
                   <Users className="w-3 h-3" />

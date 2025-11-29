@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShieldCheck, Users } from 'lucide-react';
+import { ShieldCheck, Users, BookOpen, HeartHandshake } from 'lucide-react';
 
 const ProfileHistory: React.FC = () => {
   return (
@@ -32,55 +32,72 @@ const ProfileHistory: React.FC = () => {
               <h3 className="text-3xl md:text-4xl font-serif font-bold text-slate-900 leading-tight">
                 Khoiru Ummah Islamic School
               </h3>
+              <p className="mt-3 text-slate-600 text-sm md:text-[15px] leading-relaxed">
+                Gambaran ringkas tentang siapa kami, untuk membantu orang tua cepat menangkap poin penting tanpa harus membaca paragraf panjang.
+              </p>
             </div>
-            
-            <p className="text-slate-600 text-sm md:text-[15px] leading-relaxed">
-              Khoiru Ummah Semarang adalah lembaga pendidikan Islam yang memadukan sekolah formal dengan pembinaan kepesantrenan. 
-              Sejak berdiri pada tahun <span className="font-semibold">2012</span>, fokus utamanya adalah melahirkan generasi penghafal Al-Qur'an yang kuat dalam akhlak, kokoh dalam aqidah, dan siap bersaing secara akademik.
-            </p>
-            <p className="text-slate-600 text-sm md:text-[15px] leading-relaxed">
-              Di bawah naungan <span className="font-semibold">Yayasan Pendidikan Islam Khoiru Ummah Semarang</span>, lembaga ini menaungi jenjang SD Tahfidz hingga Pondok Putri SMP/SMA. 
-              Kurikulum dirancang untuk menyeimbangkan tahfidz, pelajaran umum, serta pembinaan karakter sehari-hari, dengan pendampingan guru dan ustadzah yang dekat dengan santri.
-            </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 pt-2">
-              <div className="flex flex-col gap-2 bg-slate-50 border border-slate-200 rounded-2xl p-4">
-                <div className="flex items-center gap-2 text-primary-700">
-                  <ShieldCheck size={20} />
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em]">SD Tahfidz</p>
+            <div className="space-y-4">
+              <div className="flex items-start gap-3">
+                <div className="mt-1 flex h-9 w-9 items-center justify-center rounded-full bg-primary-50 text-primary-700">
+                  <ShieldCheck className="w-5 h-5" />
                 </div>
-                <h4 className="font-semibold text-slate-900 text-sm md:text-[15px]">Usia 6–12 tahun</h4>
-                <p className="text-xs md:text-[13px] text-slate-600 leading-relaxed">
-                  Program fullday school dengan target hafalan 5–10 juz, menggabungkan kurikulum nasional dan tahfidz.
-                </p>
+                <div className="space-y-1">
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary-700">Identitas Lembaga</p>
+                  <ul className="list-disc list-inside text-slate-600 text-sm md:text-[15px] space-y-1">
+                    <li>Lembaga pendidikan Islam terpadu di bawah Yayasan Pendidikan Islam Khoiru Ummah Semarang.</li>
+                    <li>Menggabungkan sekolah formal dengan pembinaan kepesantrenan.</li>
+                    <li>Berdiri sejak <span className="font-semibold">2012</span> dan terus berkembang hingga kini.</li>
+                  </ul>
+                </div>
               </div>
 
-              <div className="flex flex-col gap-2 bg-slate-50 border border-slate-200 rounded-2xl p-4">
-                <div className="flex items-center gap-2 text-primary-700">
-                  <Users size={20} />
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em]">SMP Pondok Putri</p>
+              <div className="flex items-start gap-3">
+                <div className="mt-1 flex h-9 w-9 items-center justify-center rounded-full bg-secondary-50 text-secondary-700">
+                  <BookOpen className="w-5 h-5" />
                 </div>
-                <h4 className="font-semibold text-slate-900 text-sm md:text-[15px]">Usia 12–15 tahun</h4>
-                <p className="text-xs md:text-[13px] text-slate-600 leading-relaxed">
-                  Boarding school khusus putri dengan target hafalan 15–20 juz dan pembinaan kemandirian remaja putri.
-                </p>
+                <div className="space-y-1">
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-secondary-700">Fokus Pendidikan</p>
+                  <ul className="list-disc list-inside text-slate-600 text-sm md:text-[15px] space-y-1">
+                    <li>Melahirkan generasi penghafal Al-Qur'an yang kuat aqidah dan akhlaknya.</li>
+                    <li>Keseimbangan antara tahfidz, pelajaran umum, dan pembinaan karakter.</li>
+                    <li>Pendampingan guru dan ustadzah yang dekat dengan keseharian santri.</li>
+                  </ul>
+                </div>
               </div>
 
-              <div className="flex flex-col gap-2 bg-slate-50 border border-slate-200 rounded-2xl p-4">
-                <div className="flex items-center gap-2 text-primary-700">
-                  <Users size={20} />
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em]">SMA Pondok Putri</p>
+              <div className="flex items-start gap-3">
+                <div className="mt-1 flex h-9 w-9 items-center justify-center rounded-full bg-emerald-50 text-emerald-700">
+                  <Users className="w-5 h-5" />
                 </div>
-                <h4 className="font-semibold text-slate-900 text-sm md:text-[15px]">Usia 15–18 tahun</h4>
-                <p className="text-xs md:text-[13px] text-slate-600 leading-relaxed">
-                  Boarding school lanjutan dengan target hafalan 20–30 juz dan persiapan masuk perguruan tinggi.
-                </p>
+                <div className="space-y-1">
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-700">Jenjang Pendidikan</p>
+                  <ul className="list-disc list-inside text-slate-600 text-sm md:text-[15px] space-y-1">
+                    <li>SD Tahfidz (fullday school, target 5–10 juz).</li>
+                    <li>SMP Pondok Putri (boarding, target 15–20 juz).</li>
+                    <li>SMA Pondok Putri (boarding, target 20–30 juz & persiapan PTN/PTS).</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3">
+                <div className="mt-1 flex h-9 w-9 items-center justify-center rounded-full bg-amber-50 text-amber-700">
+                  <HeartHandshake className="w-5 h-5" />
+                </div>
+                <div className="space-y-1">
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-amber-700">Suasana Belajar</p>
+                  <ul className="list-disc list-inside text-slate-600 text-sm md:text-[15px] space-y-1">
+                    <li>Lingkungan yang hangat, terjaga, dan penuh perhatian.</li>
+                    <li>Penanaman adab keseharian melalui kegiatan rutin santri.</li>
+                    <li>Komunikasi yang terbuka antara sekolah, pondok, dan orang tua.</li>
+                  </ul>
+                </div>
               </div>
             </div>
 
             <div className="pt-2">
               <p className="text-xs md:text-[13px] text-slate-500 leading-relaxed">
-                Informasi lebih rinci tentang sejarah, legalitas, dan struktur organisasi akan disajikan pada halaman khusus "Tentang Sekolah".
+                Detail sejarah, legalitas, dan struktur organisasi akan disajikan lebih lengkap pada halaman khusus "Tentang Sekolah".
               </p>
             </div>
           </div>

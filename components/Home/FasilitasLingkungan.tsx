@@ -1,67 +1,48 @@
 import React from 'react';
-import { Building2, Landmark, Trees, Library, LayoutGrid, Users } from 'lucide-react';
 import { GetStartedButton } from '../ui/get-started-button';
 
-const facilities = [
+const facilityPhotos = [
   {
-    icon: Building2,
     title: 'Ruang Kelas Nyaman & Ber-AC',
-    desc: 'Ruang belajar yang terang, rapi, dan tertata sehingga siswa dapat fokus menerima pelajaran.',
-    points: [
-      'Kapasitas kelas dibatasi agar interaksi guru-siswa optimal',
-      'Fasilitas proyektor/layar untuk media pembelajaran',
-      'Ventilasi dan pencahayaan yang baik',
-    ],
+    category: 'Kelas',
+    src: 'https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?q=80&w=2000&auto=format&fit=crop',
+    description: 'Kelas yang terang, rapi, dan mendukung fokus belajar santri.',
+    size: 'row-span-2',
   },
   {
-    icon: Landmark,
     title: 'Masjid & Area Ibadah',
-    desc: 'Masjid sebagai pusat kegiatan ibadah, halaqah, dan pembinaan ruhiyah santri.',
-    points: [
-      'Shalat fardhu berjamaah sebagai rutinitas utama',
-      'Kegiatan halaqah Qur\'an dan kajian rutin',
-      'Area wudhu yang bersih dan terawat',
-    ],
+    category: 'Masjid',
+    src: 'https://images.unsplash.com/photo-1547996160-81dfa63595aa?q=80&w=2000&auto=format&fit=crop',
+    description: 'Pusat ibadah, halaqah Qur\'an, dan kajian harian.',
+    size: 'row-span-1',
   },
   {
-    icon: Users,
-    title: 'Asrama Putri yang Terjaga',
-    desc: 'Lingkungan asrama yang bersih, teratur, dan diawasi pembina untuk menjaga kenyamanan dan keamanan.',
-    points: [
-      'Pengaturan kamar yang mendukung kemandirian dan kebersamaan',
-      'Pembina asrama yang mendampingi keseharian santri',
-      'Aturan harian yang menumbuhkan disiplin dan tanggung jawab',
-    ],
+    title: 'Halaman & Lapangan Aktivitas',
+    category: 'Outdoor',
+    src: 'https://images.unsplash.com/photo-1508807526345-15e9b5f4eaff?q=80&w=2000&auto=format&fit=crop',
+    description: 'Area olahraga dan kegiatan kebersamaan santri.',
+    size: 'row-span-1',
   },
   {
-    icon: Library,
+    title: 'Asrama Putri',
+    category: 'Asrama',
+    src: 'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?q=80&w=2000&auto=format&fit=crop',
+    description: 'Lingkungan asrama yang terjaga dan diawasi pembina.',
+    size: 'row-span-2',
+  },
+  {
     title: 'Perpustakaan & Pojok Baca',
-    desc: 'Koleksi buku bacaan umum, keislaman, dan referensi belajar yang bisa diakses siswa.',
-    points: [
-      'Buku-buku penunjang pelajaran dan literatur islami',
-      'Ruang baca yang tenang dan nyaman',
-      'Program pojok baca di kelas untuk membiasakan literasi',
-    ],
+    category: 'Perpustakaan',
+    src: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=2000&auto=format&fit=crop',
+    description: 'Ruang baca yang nyaman dengan koleksi buku pilihan.',
+    size: 'row-span-1',
   },
   {
-    icon: LayoutGrid,
-    title: 'Lapangan & Area Aktivitas',
-    desc: 'Ruang terbuka untuk olahraga, outbound ringan, dan kegiatan kebersamaan santri.',
-    points: [
-      'Lapangan olahraga multifungsi',
-      'Area senam pagi dan kegiatan permainan edukatif',
-      'Kegiatan kebersamaan untuk menguatkan ukhuwah santri',
-    ],
-  },
-  {
-    icon: Trees,
-    title: 'Lingkungan Asri & Terkontrol',
-    desc: 'Suasana yang tenang, jauh dari hiruk-pikuk, mendukung konsentrasi belajar dan ibadah.',
-    points: [
-      'Area hijau yang dirawat untuk memberi suasana sejuk',
-      'Akses masuk yang terkontrol untuk keamanan santri',
-      'Kebersihan lingkungan dijaga bersama setiap hari',
-    ],
+    title: 'Area Hijau & Taman',
+    category: 'Lingkungan',
+    src: 'https://images.unsplash.com/photo-1500534623283-312aade485b7?q=80&w=2000&auto=format&fit=crop',
+    description: 'Taman dan pepohonan yang menambah kesejukan lingkungan.',
+    size: 'row-span-1',
   },
 ];
 
@@ -81,33 +62,53 @@ const FasilitasLingkungan: React.FC<FasilitasLingkunganProps> = ({ onViewFacilit
             Fasilitas di Khoiru Ummah
           </h2>
           <p className="max-w-3xl mx-auto text-sm sm:text-base text-slate-600">
-            Fasilitas yang disiapkan bertujuan mendukung proses belajar, ibadah, dan pembinaan karakter
-            santri dalam suasana yang aman, bersih, dan penuh kehangatan.
+            Alih-alih hanya membaca daftar, orang tua dapat langsung melihat suasana kelas, masjid, asrama,
+            serta lingkungan sekitar melalui dokumentasi foto berikut.
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {facilities.map((item) => (
-            <div
-              key={item.title}
-              className="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow duration-200 flex flex-col"
-            >
-              <div className="h-11 w-11 rounded-xl bg-primary-50 text-primary-700 flex items-center justify-center mb-3">
-                <item.icon className="h-6 w-6" />
-              </div>
-              <h3 className="text-sm sm:text-base md:text-lg font-semibold text-slate-900 mb-1.5">
-                {item.title}
-              </h3>
-              <p className="text-xs sm:text-sm text-slate-600 mb-2.5">
-                {item.desc}
-              </p>
-              <ul className="mt-auto space-y-1.5 text-xs sm:text-sm text-slate-600 list-disc list-inside">
-                {item.points.map((point) => (
-                  <li key={point}>{point}</li>
-                ))}
-              </ul>
-            </div>
-          ))}
+        {/* Photo Grid - follows 2x2 (mobile) and 4-column (desktop) layout */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+          {/* Gambar Besar (Kiri) */}
+          <div className="col-span-2 row-span-2 relative rounded-2xl overflow-hidden group h-64 sm:h-72">
+            <img
+              src={facilityPhotos[0].src}
+              alt={facilityPhotos[0].title}
+              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              loading="lazy"
+            />
+            <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
+          </div>
+
+          {/* Gambar Kecil (Kanan Atas 1) */}
+          <div className="relative rounded-2xl overflow-hidden group h-32 sm:h-40 md:h-auto">
+            <img
+              src={facilityPhotos[1].src}
+              alt={facilityPhotos[1].title}
+              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              loading="lazy"
+            />
+          </div>
+
+          {/* Gambar Kecil (Kanan Atas 2) */}
+          <div className="relative rounded-2xl overflow-hidden group h-32 sm:h-40 md:h-auto">
+            <img
+              src={facilityPhotos[2].src}
+              alt={facilityPhotos[2].title}
+              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              loading="lazy"
+            />
+          </div>
+
+          {/* Gambar Lebar (Bawah Kanan) */}
+          <div className="col-span-2 relative rounded-2xl overflow-hidden group h-40 sm:h-48 md:h-56">
+            <img
+              src={facilityPhotos[3].src}
+              alt={facilityPhotos[3].title}
+              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              loading="lazy"
+            />
+          </div>
         </div>
 
         <div className="mt-6 flex flex-col items-center gap-2">

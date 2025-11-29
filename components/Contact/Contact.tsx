@@ -1,7 +1,7 @@
 import React from 'react';
-import { Phone, Mail, MapPin, Clock, Send } from 'lucide-react';
-import { Button } from '../ui/button';
-import { Card, CardContent } from '../ui/card';
+import { Phone, Mail, MapPin, Clock } from 'lucide-react';
+import { Card } from '../ui/card';
+import ContactFormTabs from './ContactFormTabs';
 
 const Contact: React.FC = () => {
   return (
@@ -86,49 +86,9 @@ const Contact: React.FC = () => {
           </div>
 
           {/* Form Side */}
-          <Card className="shadow-lg border-t-4 border-t-primary-500">
-            <CardContent className="p-8">
-              <h3 className="text-2xl font-bold text-slate-900 mb-6">Kirim Pesan</h3>
-              <form className="space-y-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <label htmlFor="name" className="text-sm font-medium text-slate-700">Nama Lengkap</label>
-                    <input type="text" id="name" className="w-full px-4 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-primary-500 focus:outline-none" placeholder="Bpk/Ibu..." />
-                  </div>
-                  <div className="space-y-2">
-                    <label htmlFor="phone" className="text-sm font-medium text-slate-700">No. WhatsApp</label>
-                    <input type="tel" id="phone" className="w-full px-4 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-primary-500 focus:outline-none" placeholder="08..." />
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <label htmlFor="email" className="text-sm font-medium text-slate-700">Email</label>
-                  <input type="email" id="email" className="w-full px-4 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-primary-500 focus:outline-none" placeholder="email@contoh.com" />
-                </div>
-
-                <div className="space-y-2">
-                  <label htmlFor="subject" className="text-sm font-medium text-slate-700">Perihal</label>
-                  <select id="subject" className="w-full px-4 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-primary-500 focus:outline-none bg-white">
-                    <option value="">-- Pilih Topik --</option>
-                    <option value="psb_sd">Info Pendaftaran SD Tahfidz</option>
-                    <option value="psb_smp">Info Pendaftaran SMP Pondok</option>
-                    <option value="psb_sma">Info Pendaftaran SMA Pondok</option>
-                    <option value="visit">Jadwal Kunjungan / Survei</option>
-                    <option value="lainnya">Lainnya</option>
-                  </select>
-                </div>
-
-                <div className="space-y-2">
-                  <label htmlFor="message" className="text-sm font-medium text-slate-700">Pesan</label>
-                  <textarea id="message" rows={5} className="w-full px-4 py-2 border border-slate-300 rounded-md focus:ring-2 focus:ring-primary-500 focus:outline-none" placeholder="Tuliskan pertanyaan atau pesan Anda di sini..."></textarea>
-                </div>
-
-                <Button className="w-full py-6 text-lg font-semibold bg-primary-600 hover:bg-primary-700">
-                  <Send className="w-5 h-5 mr-2" /> Kirim Pesan
-                </Button>
-              </form>
-            </CardContent>
-          </Card>
+          <div className="space-y-6">
+            <ContactFormTabs />
+          </div>
 
         </div>
       </div>
